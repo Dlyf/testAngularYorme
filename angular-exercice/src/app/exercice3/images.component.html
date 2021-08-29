@@ -1,0 +1,10 @@
+<h2>Exercice 3</h2>
+
+
+<p *ngIf="!imgUrl">Aucun image</p>
+<img *ngIf="imgUrl" [src]="imgUrl" alt="" />
+
+<button (click)="changeImg(1)">Chien</button>
+<button (click)="changeImg(2)">Chat</button>
+<button (click)="changeImg(3)">Poisson</button>
+
