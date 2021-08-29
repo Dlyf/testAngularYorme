@@ -1,0 +1,40 @@
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="produit?.image_front_url" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ produit?.product_name_fr }}</h5>
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Energie</th>
+              <th>Lipides</th>
+              <th>Glucides</th>
+              <th>Proteines</th>
+              <th>Fibres</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>{{ produit?.nutriments?.energy}}</td>
+                <td>{{ produit?.nutriments?.fat_100g }}</td>
+                <td>{{ produit?.nutriments?.carbohydrates_100g }}</td>
+                <td>{{ produit?.nutriments?.proteins_100g }}</td>
+                <td>{{ produit?.nutriments?.fiber_100g || 0}}</td>
+              </tr>
+          </tbody>
+        </table>
+        <div>
+          <img [src]="nutriscoreLink + produit?.nutrition_grade_fr + '.svg'" [alt]="'nutriscore: ' + produit?.nutrition_grade_fr">
+        </div>
+      </div>
+      <div>
+        <button (click)="location.back()" class="btn btn-danger">
+          Retour
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
