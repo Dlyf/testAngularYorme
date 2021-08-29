@@ -1,0 +1,56 @@
+<h2>Formulaire Reactive Formulaire</h2>
+
+<input 
+    [formControl]="usernameControl"
+    type="text" placeholder="Du texte" />
+
+<button (click)="sayHello()">
+    Dire bonjour
+</button>
+
+<br/>
+<form [formGroup]="loginForm">
+    <label>Nom utilisateur</label>
+    <input 
+        formControlName="usernameField" 
+        type="text" 
+        placeholder="ex: ali9563" />
+    
+    <label>Mot de passe</label>
+    <input 
+        formControlName="passwordField"
+        type="password" />
+    
+    <input type="submit">
+</form>
+
+<hr/>
+
+<form [formGroup]="signUpForm" class="form">
+    <div class="form-group">
+        <label>Nom utilisateur</label>
+        <input 
+            formControlName="usernameField" 
+            type="text" 
+            placeholder="ex: ali9563" />
+    </div>
+    <p *ngIf="checkPasswordControl(); let msg">
+        Ce champ est obligatoire
+    </p>
+    
+    <div class="form-group">
+        <label>Mot de passe</label>
+        <input 
+            formControlName="passwordField"
+            type="password" />
+    </div>
+    
+    <div class="form-group">
+        <label>Confirmation</label>
+        <input 
+            formControlName="passwordConfirmField"
+            type="password" />
+    </div>
+    
+    <input type="submit">
+</form>

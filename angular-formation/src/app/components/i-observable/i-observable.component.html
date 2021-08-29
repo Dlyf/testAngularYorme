@@ -1,0 +1,9 @@
+<h2>Les Observables</h2>
+{{ nombres }}
+
+<ul>
+    <li *ngFor="let u of utilisateurs">
+        {{u.name}}
+    </li>
+</ul>
+<button (click)="getUtiliateurs()">Utilisateur</button>
